@@ -12,7 +12,7 @@ int B = 9;
 int A = 10;
 int F = 11;
 int G = 12;
-int notalar[] = {800, 200, 400, 300, 100, 100, 100, 100, 100, 100};
+int notalar[] = {800, 400, 400, 400, 100, 100, 100, 100, 100, 100};
 int circle[] = {A, B, C, D, E, F};
 
 void setup() {
@@ -37,6 +37,7 @@ int circleCount = 0;
 bool start = false;
 void loop() {
   if (digitalRead(CHECKPIN)) {
+    noTone(BUZZER);
     RakamYaz(-2);
     digitalWrite(P, LOW);
     while (digitalRead(CHECKPIN)) {
@@ -82,6 +83,7 @@ void loop() {
       }
 
       if (millis() - timer > 800) {
+        noTone(BUZZER);
         digitalWrite(P, LOW);
       }
     }
